@@ -4,7 +4,9 @@
 This repository contains code and resources for analyzing tennis matches using deep learning and machine learning techniques. The project aims to develop a video analysis tool that includes ball tracking, court tracking, bounce detection, and player tracking using a single camera.
 
 
-![](https://github.com/kemswd/Tennis-analysis-using-deep-learning-and-machine-learning./assets/87093504/8ef198c5-7541-4b3f-94d3-a8787ed77427)
+[](
+https://github.com/kemswd/Tennis-analysis-using-deep-learning-and-machine-learning./assets/87093504/fb5fd44c-87b3-499d-b839-3481fac9f924
+)
 
 
 
@@ -59,13 +61,17 @@ To run the code, ensure you have Python installed and install the required packa
 
 ```bash
 pip install -r requirements.txt
+```
 ## Usage
 - Clone the repository:
-
+```bash
 git clone https://github.com/yourusername/tennis-analysis.git
+```
 - Navigate to the project directory:
-
+```bash
 cd tennis-analysis
+```
 - Run the analysis script:
-
+```bash
 python main.py
+```
