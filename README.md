@@ -20,8 +20,7 @@ https://github.com/kemswd/Tennis-analysis-using-deep-learning-and-machine-learni
 - [Possible Improvements](#possible-improvements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 Tennis analysis can be enriched with statistics like serve locations and ball depth. Existing tools like Hawk-Eye and IBM Slamtracker provide detailed statistics but are costly and complex. This project aims to create a more accessible analysis tool using deep learning and a single camera setup.
