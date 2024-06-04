@@ -1,59 +1,56 @@
-# Tennis-analysis-using-deep-learning-and-machine-learning.
+# Tennis Analysis System
 
+## Overview
 
-This repository contains code and resources for analyzing tennis matches using deep learning and machine learning techniques. The project aims to develop a video analysis tool that includes ball tracking, court tracking, bounce detection, and player tracking using a single camera.
-
+This project demonstrates how to use machine learning, computer vision, and deep learning techniques to create a comprehensive tennis analysis system. The system utilizes YOLO for object detection, CNN for court key points detection, and various other tools for data tracking and analysis.
 
 [](
 https://github.com/kemswd/Tennis-analysis-using-deep-learning-and-machine-learning./assets/87093504/fb5fd44c-87b3-499d-b839-3481fac9f924
 )
 
+## Features
 
+- **Object Detection**: Detect players and tennis balls using YOLOv8.
+- **Object Tracking**: Track detected objects across frames.
+- **Court Key Points Detection**: Custom CNN model to detect key points on the court.
+- **Visualization**: Mini court to show player and ball positions.
+- **Speed Analysis**: Analysis board for player speed, average speed, ball speed, and average ball speed.
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Dataset](#dataset)
-- [Court Detection](#court-detection)
-- [Ball Detection](#ball-detection)
-- [Bounce Detection](#bounce-detection)
-- [Pipeline](#pipeline)
-- [Possible Improvements](#possible-improvements)
-- [Installation](#installation)
-- [Usage](#usage)
 
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Features](#features)
+    - [Object Detection](#object-detection)
+    - [Object Tracking](#object-tracking)
+    - [Court Key Points Detection](#court-key-points-detection)
+    - [Visualization](#visualization)
+    - [Speed Analysis](#speed-analysis)
+## Features
 
-## Introduction
-Tennis analysis can be enriched with statistics like serve locations and ball depth. Existing tools like Hawk-Eye and IBM Slamtracker provide detailed statistics but are costly and complex. This project aims to create a more accessible analysis tool using deep learning and a single camera setup.
+### Object Detection
 
-## Dataset
-The dataset consists of video highlights from various tournaments, covering all court types (hard, clay, grass). Frames were extracted and manually filtered, resulting in 8841 images with a resolution of 1280×720.
+- Uses YOLOv8 from Ultralytics to detect players and tennis balls in video frames.
+- Fine-tuned on a custom dataset for optimal performance.
 
-## Court Detection
-The court detection uses a neural network to identify 14 key points on a tennis court. A semi-automated approach was used to collect and filter the dataset, and a deep learning network similar to TrackNet was employed.
+### Object Tracking
 
-### Method
-1. Extract white pixels from the image.
-2. Detect lines using Hough Transform.
-3. Compare detected lines with reference court configuration using homography matrix.
-4. Perform warp perspective and count hits to determine the best matching lines.
+- Tracks detected objects across video frames to maintain consistent identification.
 
-### Deep Learning Approach
-The proposed deep learning network detects key points of the court and restores the court configuration in the image. Postprocessing techniques refine key points using classical computer vision methods.
+### Court Key Points Detection
 
-## Ball Detection
-Ball detection uses the TrackNet deep learning network, trained to recognize the ball and its flying patterns from consecutive frames. The dataset includes video clips with labeled frames indicating ball visibility and trajectory patterns.
+- Custom Convolutional Neural Network (CNN) developed using PyTorch to detect key points on the tennis court.
 
-## Bounce Detection
-Bounce detection is achieved by tracking the ball's path and using machine learning to identify sudden changes in direction, indicating a bounce. A CatBoostRegressor model was used with features derived from ball trajectory data.
+### Visualization
 
-## Pipeline
-The pipeline integrates court detection, ball detection, bounce detection, and player tracking into a cohesive analysis tool. It starts with court detection, followed by ball tracking, bounce detection, and player tracking using a pretrained Faster RCNN neural network.
+- Mini court visualization to display the positions of players and the ball in real-time.
+- Provides a clear and concise view of the game's progress.
 
-## Possible Improvements
-1. Speed up the algorithm by using a lighter neural network and applying quantization and pruning.
-2. Combine ball and court detection into one neural network.
-3. Improve ball detection quality by adding frames without the ball to the training dataset.
-4. Use augmentation during court detection training to handle shadows and different angles.
+### Speed Analysis
+
+- Analysis board to monitor and display:
+  - Player speed and average speed.
+  - Ball speed and average ball speed.
 
 ## Installation
 To run the code, ensure you have Python installed and install the required packages using:
